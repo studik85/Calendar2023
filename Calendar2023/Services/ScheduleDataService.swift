@@ -22,28 +22,12 @@ class ScheduleDataService {
     private func getSchedules() {
         guard let url = URL(string: "https://ergast.com/api/f1/2023.json") else {return}
         
-       scheduleSubscription = URLSession.shared.dataTaskPublisher(for: url)
-            .subscribe(on: DispatchQueue.global(qos: .default))
-            .tryMap { output in
-                guard let response = output.response as? HTTPURLResponse,
-                      response.statusCode >= 200 && response.statusCode < 300 else {
-                    throw URLError(.badServerResponse)
-                }
-                return output.data
-            }
-            .receive(on: DispatchQueue.main)
+        scheduleSubscription = NetworkingManager.download(url: url)
             .decode(type: Schedule.self, decoder: JSONDecoder())
-            .sink { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            } receiveValue: { [weak self] returnedSchedule in
+            .sink(receiveCompletion: NetworkingManager.handleComplition, receiveValue: { [weak self] returnedSchedule in
                 self?.allRacingEvents = returnedSchedule.mrData.raceTable.races
                 self?.scheduleSubscription?.cancel()
-            }
+            })
 
     }
 }

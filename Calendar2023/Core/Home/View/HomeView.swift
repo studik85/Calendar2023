@@ -23,11 +23,13 @@ struct HomeView: View {
                 columnTitles
                 if !showPortfolio {
                     allRacingList
+                    
                     .transition(.move(edge: .leading))
                 }
                 
                 if showPortfolio {
                    portfolioRacingList
+                        
                         .transition(.move(edge: .trailing))
                 }
 
@@ -74,6 +76,7 @@ extension HomeView {
         List {
             ForEach(vm.allRacingEvents) { event in
                 ScheduleRowView(racingEvent: event)
+                    .listRowBackground(Color.clear)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
             }
         }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AC5BBF75299A581200EB3533 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF74299A581200EB3533 /* HomeViewModel.swift */; };
 		AC5BBF78299A7ADD00EB3533 /* ScheduleDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF77299A7ADD00EB3533 /* ScheduleDataService.swift */; };
+		AC5BBF7B299AA02C00EB3533 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */; };
 		ACFBF853299968D000B736D8 /* Calendar2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF852299968D000B736D8 /* Calendar2023App.swift */; };
 		ACFBF855299968D000B736D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF854299968D000B736D8 /* ContentView.swift */; };
 		ACFBF857299968D100B736D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF856299968D100B736D8 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		AC5BBF74299A581200EB3533 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AC5BBF77299A7ADD00EB3533 /* ScheduleDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDataService.swift; sourceTree = "<group>"; };
+		AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		ACFBF84F299968D000B736D8 /* Calendar2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFBF852299968D000B736D8 /* Calendar2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar2023App.swift; sourceTree = "<group>"; };
 		ACFBF854299968D000B736D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		AC5BBF79299A9FDE00EB3533 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
 		ACFBF846299968D000B736D8 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 		ACFBF851299968D000B736D8 /* Calendar2023 */ = {
 			isa = PBXGroup;
 			children = (
+				AC5BBF79299A9FDE00EB3533 /* Utilites */,
 				AC5BBF76299A7A3F00EB3533 /* Services */,
 				ACFBF86F299A421000B736D8 /* Models */,
 				ACFBF863299970F500B736D8 /* Core */,
@@ -245,6 +256,7 @@
 				ACFBF853299968D000B736D8 /* Calendar2023App.swift in Sources */,
 				ACFBF86229996E2D00B736D8 /* Color.swift in Sources */,
 				ACFBF871299A429C00B736D8 /* Schedule.swift in Sources */,
+				AC5BBF7B299AA02C00EB3533 /* NetworkingManager.swift in Sources */,
 				ACFBF875299A45B000B736D8 /* PreviewProvider.swift in Sources */,
 				ACFBF86E299A3A4E00B736D8 /* CircleButtonAnimationView.swift in Sources */,
 			);
