@@ -21,8 +21,6 @@ struct HomeView: View {
             VStack {
                 homeHader
                 columnTitles
-                
-                
                 if !showPortfolio {
                     allRacingList
                     .transition(.move(edge: .leading))
@@ -32,8 +30,7 @@ struct HomeView: View {
                    portfolioRacingList
                         .transition(.move(edge: .trailing))
                 }
-            
-                
+
                 Spacer(minLength: 0)
             }
         }
