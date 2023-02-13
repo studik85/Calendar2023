@@ -11,6 +11,10 @@
 		ACFBF855299968D000B736D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF854299968D000B736D8 /* ContentView.swift */; };
 		ACFBF857299968D100B736D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF856299968D100B736D8 /* Assets.xcassets */; };
 		ACFBF85A299968D100B736D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF859299968D100B736D8 /* Preview Assets.xcassets */; };
+		ACFBF86229996E2D00B736D8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF86129996E2D00B736D8 /* Color.swift */; };
+		ACFBF8682999715D00B736D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF8672999715D00B736D8 /* HomeView.swift */; };
+		ACFBF86C2999749800B736D8 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF86B2999749800B736D8 /* CircleButtonView.swift */; };
+		ACFBF86E299A3A4E00B736D8 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF86D299A3A4E00B736D8 /* CircleButtonAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		ACFBF854299968D000B736D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACFBF856299968D100B736D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACFBF859299968D100B736D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ACFBF86129996E2D00B736D8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		ACFBF8672999715D00B736D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		ACFBF86B2999749800B736D8 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		ACFBF86D299A3A4E00B736D8 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,8 @@
 		ACFBF851299968D000B736D8 /* Calendar2023 */ = {
 			isa = PBXGroup;
 			children = (
+				ACFBF863299970F500B736D8 /* Core */,
+				ACFBF86029996E1300B736D8 /* Extensions */,
 				ACFBF852299968D000B736D8 /* Calendar2023App.swift */,
 				ACFBF854299968D000B736D8 /* ContentView.swift */,
 				ACFBF856299968D100B736D8 /* Assets.xcassets */,
@@ -65,6 +75,64 @@
 				ACFBF859299968D100B736D8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ACFBF86029996E1300B736D8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF86129996E2D00B736D8 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ACFBF863299970F500B736D8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF8692999744C00B736D8 /* Components */,
+				ACFBF8642999712200B736D8 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		ACFBF8642999712200B736D8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF8662999713300B736D8 /* ViewModels */,
+				ACFBF8652999712D00B736D8 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		ACFBF8652999712D00B736D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF8672999715D00B736D8 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ACFBF8662999713300B736D8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ACFBF8692999744C00B736D8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF86A2999747C00B736D8 /* CircleButton */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		ACFBF86A2999747C00B736D8 /* CircleButton */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF86B2999749800B736D8 /* CircleButtonView.swift */,
+				ACFBF86D299A3A4E00B736D8 /* CircleButtonAnimationView.swift */,
+			);
+			path = CircleButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +205,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACFBF86C2999749800B736D8 /* CircleButtonView.swift in Sources */,
 				ACFBF855299968D000B736D8 /* ContentView.swift in Sources */,
+				ACFBF8682999715D00B736D8 /* HomeView.swift in Sources */,
 				ACFBF853299968D000B736D8 /* Calendar2023App.swift in Sources */,
+				ACFBF86229996E2D00B736D8 /* Color.swift in Sources */,
+				ACFBF86E299A3A4E00B736D8 /* CircleButtonAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +342,14 @@
 				DEVELOPMENT_TEAM = 6SU4X4KX89;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Race Calendar";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,6 +357,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.studenkovaa.Calendar2023;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,11 +377,14 @@
 				DEVELOPMENT_TEAM = 6SU4X4KX89;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Race Calendar";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +392,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.studenkovaa.Calendar2023;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
