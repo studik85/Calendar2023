@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC5BBF75299A581200EB3533 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF74299A581200EB3533 /* HomeViewModel.swift */; };
 		ACFBF853299968D000B736D8 /* Calendar2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF852299968D000B736D8 /* Calendar2023App.swift */; };
 		ACFBF855299968D000B736D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF854299968D000B736D8 /* ContentView.swift */; };
 		ACFBF857299968D100B736D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF856299968D100B736D8 /* Assets.xcassets */; };
@@ -15,9 +16,13 @@
 		ACFBF8682999715D00B736D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF8672999715D00B736D8 /* HomeView.swift */; };
 		ACFBF86C2999749800B736D8 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF86B2999749800B736D8 /* CircleButtonView.swift */; };
 		ACFBF86E299A3A4E00B736D8 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF86D299A3A4E00B736D8 /* CircleButtonAnimationView.swift */; };
+		ACFBF871299A429C00B736D8 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF870299A429C00B736D8 /* Schedule.swift */; };
+		ACFBF873299A450200B736D8 /* ScheduleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF872299A450200B736D8 /* ScheduleRowView.swift */; };
+		ACFBF875299A45B000B736D8 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF874299A45B000B736D8 /* PreviewProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC5BBF74299A581200EB3533 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		ACFBF84F299968D000B736D8 /* Calendar2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFBF852299968D000B736D8 /* Calendar2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar2023App.swift; sourceTree = "<group>"; };
 		ACFBF854299968D000B736D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +32,9 @@
 		ACFBF8672999715D00B736D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ACFBF86B2999749800B736D8 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		ACFBF86D299A3A4E00B736D8 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
+		ACFBF870299A429C00B736D8 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		ACFBF872299A450200B736D8 /* ScheduleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRowView.swift; sourceTree = "<group>"; };
+		ACFBF874299A45B000B736D8 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,7 @@
 		ACFBF851299968D000B736D8 /* Calendar2023 */ = {
 			isa = PBXGroup;
 			children = (
+				ACFBF86F299A421000B736D8 /* Models */,
 				ACFBF863299970F500B736D8 /* Core */,
 				ACFBF86029996E1300B736D8 /* Extensions */,
 				ACFBF852299968D000B736D8 /* Calendar2023App.swift */,
@@ -81,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				ACFBF86129996E2D00B736D8 /* Color.swift */,
+				ACFBF874299A45B000B736D8 /* PreviewProvider.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -107,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				ACFBF8672999715D00B736D8 /* HomeView.swift */,
+				ACFBF872299A450200B736D8 /* ScheduleRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,6 +125,7 @@
 		ACFBF8662999713300B736D8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AC5BBF74299A581200EB3533 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -133,6 +145,14 @@
 				ACFBF86D299A3A4E00B736D8 /* CircleButtonAnimationView.swift */,
 			);
 			path = CircleButton;
+			sourceTree = "<group>";
+		};
+		ACFBF86F299A421000B736D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ACFBF870299A429C00B736D8 /* Schedule.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,11 +225,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACFBF873299A450200B736D8 /* ScheduleRowView.swift in Sources */,
 				ACFBF86C2999749800B736D8 /* CircleButtonView.swift in Sources */,
 				ACFBF855299968D000B736D8 /* ContentView.swift in Sources */,
+				AC5BBF75299A581200EB3533 /* HomeViewModel.swift in Sources */,
 				ACFBF8682999715D00B736D8 /* HomeView.swift in Sources */,
 				ACFBF853299968D000B736D8 /* Calendar2023App.swift in Sources */,
 				ACFBF86229996E2D00B736D8 /* Color.swift in Sources */,
+				ACFBF871299A429C00B736D8 /* Schedule.swift in Sources */,
+				ACFBF875299A45B000B736D8 /* PreviewProvider.swift in Sources */,
 				ACFBF86E299A3A4E00B736D8 /* CircleButtonAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false
     
     var body: some View {
@@ -19,6 +20,20 @@ struct HomeView: View {
             //Content Layer
             VStack {
                 homeHader
+                columnTitles
+                
+                
+                if !showPortfolio {
+                    allRacingList
+                    .transition(.move(edge: .leading))
+                }
+                
+                if showPortfolio {
+                   portfolioRacingList
+                        .transition(.move(edge: .trailing))
+                }
+            
+                
                 Spacer(minLength: 0)
             }
         }
@@ -30,6 +45,7 @@ struct HomeView_Previews: PreviewProvider {
         NavigationView {
             HomeView()
         }
+        .environmentObject(dev.homeVM)
     }
 }
 
@@ -40,7 +56,7 @@ extension HomeView {
                 .animation(.none)
                 .background(CircleButtonAnimationView(animate: $showPortfolio))
             Spacer()
-            Text(showPortfolio ? "Portfolio" : "Live Prices")
+            Text(showPortfolio ? "Favorite Races" : "Race Calendar ")
                 .font(.headline)
                 .fontWeight(.heavy)
                 .foregroundColor(Color.theme.accent)
@@ -54,6 +70,42 @@ extension HomeView {
                     }
                 }
         }
+        .padding(.horizontal)
+    }
+    
+    private var allRacingList: some View {
+        List {
+            ForEach(vm.allRacingEvents) { event in
+                ScheduleRowView(racingEvent: event)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+            }
+        }
+        
+        .listStyle(.plain)
+    }
+    
+    private var portfolioRacingList: some View {
+        List {
+            ForEach(vm.portfolioRaces) { event in
+                ScheduleRowView(racingEvent: event)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+            }
+        }
+        
+        .listStyle(.plain)
+    }
+    
+    private var columnTitles: some View {
+        HStack{
+            Text("Round")
+            Spacer()
+            Text("Race Name")
+            Spacer()
+            Text("Date")
+                .frame(width: UIScreen.main.bounds.width / 3.5)
+        }
+        .font(.caption)
+        .foregroundColor(Color.theme.secondaryText)
         .padding(.horizontal)
     }
 }
