@@ -22,11 +22,28 @@ class HomeViewModel: ObservableObject {
     }
     
     func addSubscribers() {
-        dataService.$allRacingEvents
-            .sink { [weak self] returndedSchedule in
-                self?.allRacingEvents = returndedSchedule
+
+        
+        $searchText
+            .combineLatest(dataService.$allRacingEvents)
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+            .map(filterEvents)
+
+            .sink { [weak self] (returnedEvents) in
+                self?.allRacingEvents = returnedEvents
             }
             .store(in: &cancellables)
+    }
+    
+    private func filterEvents(text: String, events: [Race]) -> [Race] {
+        guard !text.isEmpty else {
+            return events
+        }
+        
+        let lowercasedText = text.lowercased()
+        return events.filter { (event) -> Bool in
+            return event.raceName.lowercased().contains(lowercasedText)
+        }
     }
     
     func convertUTCDateToLocalDateString(date: String, time: String) -> String {

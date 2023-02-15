@@ -20,7 +20,7 @@ struct ScheduleRowView: View {
                 .foregroundColor(Color.theme.secondaryText)
                 .frame(minWidth: 30)
             EventFlagImageView(event: racingEvent)
-                .frame(width: 25, height: 16)
+                .frame(width: 30, height: 16)
                 .cornerRadius(4)
             Text(racingEvent.raceName)
                 .font(.caption)

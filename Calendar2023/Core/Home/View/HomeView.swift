@@ -102,7 +102,7 @@ extension HomeView {
             Spacer()
             Text("Race Name")
             Spacer()
-            Text("Date & Time")
+            Text("Date & Local Time")
                 .frame(width: UIScreen.main.bounds.width / 3.5)
         }
         .font(.caption)
