@@ -12,6 +12,7 @@ class HomeViewModel: ObservableObject {
     
     @Published var allRacingEvents: [Race] = []
     @Published var portfolioRaces: [Race] = []
+    @Published var searchText: String = ""
     
     private let dataService = ScheduleDataService()
     private var cancellables = Set<AnyCancellable>()

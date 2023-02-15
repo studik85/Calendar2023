@@ -27,10 +27,8 @@ class FlagImageService {
     private func getflagImage() {
         if let savedImage = fileManager.getImage(imageName: imageName, folderName: folderName) {
             image = savedImage
-            print("Retrived image from File Manager!")
         } else {
             downloadFlagImage()
-            print("Download Image Now!")
         }
     }
     

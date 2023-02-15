@@ -11,6 +11,8 @@
 		AC267BB0299B6BC800B84031 /* FlagImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC267BAF299B6BC800B84031 /* FlagImageService.swift */; };
 		AC267BB2299B6E9900B84031 /* EventFlagImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC267BB1299B6E9900B84031 /* EventFlagImageViewModel.swift */; };
 		AC48866E299CBE0A00CF5E66 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48866D299CBE0A00CF5E66 /* LocalFileManager.swift */; };
+		AC488670299CED6300CF5E66 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48866F299CED6300CF5E66 /* SearchBarView.swift */; };
+		AC488672299CF99900CF5E66 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC488671299CF99900CF5E66 /* UIApplication.swift */; };
 		AC5BBF75299A581200EB3533 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF74299A581200EB3533 /* HomeViewModel.swift */; };
 		AC5BBF78299A7ADD00EB3533 /* ScheduleDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF77299A7ADD00EB3533 /* ScheduleDataService.swift */; };
 		AC5BBF7B299AA02C00EB3533 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */; };
@@ -32,6 +34,8 @@
 		AC267BAF299B6BC800B84031 /* FlagImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImageService.swift; sourceTree = "<group>"; };
 		AC267BB1299B6E9900B84031 /* EventFlagImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFlagImageViewModel.swift; sourceTree = "<group>"; };
 		AC48866D299CBE0A00CF5E66 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		AC48866F299CED6300CF5E66 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		AC488671299CF99900CF5E66 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		AC5BBF74299A581200EB3533 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AC5BBF77299A7ADD00EB3533 /* ScheduleDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDataService.swift; sourceTree = "<group>"; };
 		AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 			children = (
 				ACFBF86129996E2D00B736D8 /* Color.swift */,
 				ACFBF874299A45B000B736D8 /* PreviewProvider.swift */,
+				AC488671299CF99900CF5E66 /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 			children = (
 				AC267BAC299B68A400B84031 /* EventFlagImage */,
 				ACFBF86A2999747C00B736D8 /* CircleButton */,
+				AC48866F299CED6300CF5E66 /* SearchBarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -267,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC488672299CF99900CF5E66 /* UIApplication.swift in Sources */,
 				ACFBF873299A450200B736D8 /* ScheduleRowView.swift in Sources */,
 				AC267BB0299B6BC800B84031 /* FlagImageService.swift in Sources */,
 				AC267BB2299B6E9900B84031 /* EventFlagImageViewModel.swift in Sources */,
@@ -282,6 +289,7 @@
 				ACFBF871299A429C00B736D8 /* Schedule.swift in Sources */,
 				AC5BBF7B299AA02C00EB3533 /* NetworkingManager.swift in Sources */,
 				ACFBF875299A45B000B736D8 /* PreviewProvider.swift in Sources */,
+				AC488670299CED6300CF5E66 /* SearchBarView.swift in Sources */,
 				ACFBF86E299A3A4E00B736D8 /* CircleButtonAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
