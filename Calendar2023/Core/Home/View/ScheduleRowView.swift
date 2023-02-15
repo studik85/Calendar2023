@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ScheduleRowView: View {
     
+    @EnvironmentObject private var vm: HomeViewModel
+    
     let racingEvent: Race
     
     var body: some View {
@@ -18,22 +20,24 @@ struct ScheduleRowView: View {
                 .foregroundColor(Color.theme.secondaryText)
                 .frame(minWidth: 30)
             EventFlagImageView(event: racingEvent)
-                .frame(width: 30, height: 30)
+                .frame(width: 25, height: 16)
                 .cornerRadius(4)
             Text(racingEvent.raceName)
-                .font(.headline)
-                .padding(.leading, 6)
+                .font(.caption)
+                .bold()
+                .lineLimit(0)
+                .minimumScaleFactor(0.7)
+                .padding(.leading, 45)
                 .foregroundColor(Color.theme.accent)
             Spacer()
             VStack(alignment: .trailing) {
-                Text(racingEvent.date)
+                Text(vm.convertUTCDateToLocalDateString(date: racingEvent.date, time: racingEvent.time))
+                    .font(.caption)
                     .bold()
+                    .lineLimit(0)
                     .foregroundColor(Color.theme.accent)
-                Text(racingEvent.time)
-                    .bold()
-                    .foregroundColor(Color.theme.accent)
+                    .minimumScaleFactor(0.7)
             }
-//            .padding(.trailing)
             .frame(width: UIScreen.main.bounds.width / 3.5)
         }
         .font(.subheadline)
@@ -43,5 +47,6 @@ struct ScheduleRowView: View {
 struct ScheduleRowView_Previews: PreviewProvider {
     static var previews: some View {
         ScheduleRowView(racingEvent: dev.event)
+            .environmentObject(dev.homeVM)
     }
 }

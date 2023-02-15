@@ -28,4 +28,15 @@ class HomeViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    func convertUTCDateToLocalDateString(date: String, time: String) -> String {
+        let stringDate: String = date + "T" + time
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let newDate = formatter.date(from: stringDate)
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let localDateStr = formatter.string(from: newDate ?? Date())
+        return localDateStr
+    }
+    
 }

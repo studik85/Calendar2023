@@ -24,8 +24,7 @@ struct EventFlagImageView: View {
             if let image = vm.flagImage {
                 Image(uiImage: image)
                     .resizable()
-                    .scaledToFit()
-                
+                    .scaledToFill()
             } else if vm.isLoading {
                 ProgressView()
             } else {

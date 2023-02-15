@@ -14,13 +14,27 @@ class FlagImageService {
     @Published var image: UIImage? = nil
     private var imageSubscription: AnyCancellable?
     private let event: Race
+    private let fileManager = LocalFileManager.instance
+    private let folderName = "flag_images"
+    private let imageName: String
     
     init(event: Race) {
         self.event = event
-        getFlagImage()
+        self.imageName = event.circuit.location.country
+        getflagImage()
     }
     
-    private func getFlagImage() {
+    private func getflagImage() {
+        if let savedImage = fileManager.getImage(imageName: imageName, folderName: folderName) {
+            image = savedImage
+            print("Retrived image from File Manager!")
+        } else {
+            downloadFlagImage()
+            print("Download Image Now!")
+        }
+    }
+    
+    private func downloadFlagImage() {
         if event.circuit.location.country == "UK" {
             guard let url = URL(string: ("https://countryflagsapi.com/png/\(event.circuit.location.country.replacingOccurrences(of: "UK", with: "gb"))").replacingOccurrences(of: " ", with: "%20")) else {return}
         
@@ -29,8 +43,11 @@ class FlagImageService {
                 return UIImage(data: data)
             })
             .sink(receiveCompletion: NetworkingManager.handleComplition, receiveValue: { [weak self] returnedImage in
-                self?.image = returnedImage
-                self?.imageSubscription?.cancel()
+                guard let self = self, let downloadedImage = returnedImage else {return
+                }
+                self.image = returnedImage
+                self.imageSubscription?.cancel()
+                self.fileManager.saveImage(image: downloadedImage, imageName: self.imageName, folderName: self.folderName)
             })
         } else {
             guard let url = URL(string: ("https://countryflagsapi.com/png/\(event.circuit.location.country.replacingOccurrences(of: "UAE", with: "ae"))").replacingOccurrences(of: " ", with: "%20")) else {return}
@@ -40,8 +57,11 @@ class FlagImageService {
                 return UIImage(data: data)
             })
             .sink(receiveCompletion: NetworkingManager.handleComplition, receiveValue: { [weak self] returnedImage in
-                self?.image = returnedImage
-                self?.imageSubscription?.cancel()
+                guard let self = self, let downloadedImage = returnedImage else {return
+                }
+                self.image = returnedImage
+                self.imageSubscription?.cancel()
+                self.fileManager.saveImage(image: downloadedImage, imageName: self.imageName, folderName: self.folderName)
             })
         }
         
