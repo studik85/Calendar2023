@@ -15,7 +15,7 @@ struct SearchBarView: View {
         HStack{
             Image(systemName: "magnifyingglass")
                 .foregroundColor(searchText.isEmpty ? Color.theme.secondaryText : Color.theme.accent)
-            TextField("Search by name...", text: $searchText)
+            TextField("Search race by name...", text: $searchText)
                 .foregroundColor(Color.theme.accent)
                 .overlay(
                 Image(systemName: "xmark.circle.fill")

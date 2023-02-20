@@ -11,6 +11,8 @@ struct HomeView: View {
     
     @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false
+    @State private var selectedEvent: Race? = nil
+    @State private var showDetailView: Bool = false
     
     var body: some View {
         ZStack {
@@ -37,6 +39,9 @@ struct HomeView: View {
                 Spacer(minLength: 0)
             }
         }
+        .background(
+         NavigationLink(destination: DetailLoadingView(event: $selectedEvent), isActive: $showDetailView, label: {EmptyView()})
+        )
     }
 }
 
@@ -79,6 +84,9 @@ extension HomeView {
                 ScheduleRowView(racingEvent: event)
                     .listRowBackground(Color.clear)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .onTapGesture {
+                        segue(event: event)
+                    }
             }
         }
         
@@ -108,5 +116,10 @@ extension HomeView {
         .font(.caption)
         .foregroundColor(Color.theme.secondaryText)
         .padding(.horizontal)
+    }
+    
+    private func segue(event: Race) {
+        selectedEvent = event
+        showDetailView.toggle()
     }
 }
