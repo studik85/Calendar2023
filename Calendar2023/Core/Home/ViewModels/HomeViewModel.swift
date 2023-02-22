@@ -52,9 +52,9 @@ class HomeViewModel: ObservableObject {
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         let newDate = formatter.date(from: stringDate)
         formatter.timeZone = TimeZone.current
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = "d MMM, HH:mm"
         let localDateStr = formatter.string(from: newDate ?? Date())
-        return localDateStr
+        return localDateStr.capitalized
     }
     
 }

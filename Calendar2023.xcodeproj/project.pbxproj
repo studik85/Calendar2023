@@ -10,6 +10,7 @@
 		AC267BAE299B68E900B84031 /* EventFlagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC267BAD299B68E900B84031 /* EventFlagImageView.swift */; };
 		AC267BB0299B6BC800B84031 /* FlagImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC267BAF299B6BC800B84031 /* FlagImageService.swift */; };
 		AC267BB2299B6E9900B84031 /* EventFlagImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC267BB1299B6E9900B84031 /* EventFlagImageViewModel.swift */; };
+		AC377ED229A656A1001DD6CD /* EventMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC377ED129A656A1001DD6CD /* EventMapAnnotationView.swift */; };
 		AC3C39BD29A3C54A001B4BE1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3C39BC29A3C54A001B4BE1 /* DetailView.swift */; };
 		AC48866E299CBE0A00CF5E66 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48866D299CBE0A00CF5E66 /* LocalFileManager.swift */; };
 		AC488670299CED6300CF5E66 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48866F299CED6300CF5E66 /* SearchBarView.swift */; };
@@ -18,7 +19,6 @@
 		AC5BBF78299A7ADD00EB3533 /* ScheduleDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF77299A7ADD00EB3533 /* ScheduleDataService.swift */; };
 		AC5BBF7B299AA02C00EB3533 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */; };
 		ACFBF853299968D000B736D8 /* Calendar2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF852299968D000B736D8 /* Calendar2023App.swift */; };
-		ACFBF855299968D000B736D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF854299968D000B736D8 /* ContentView.swift */; };
 		ACFBF857299968D100B736D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF856299968D100B736D8 /* Assets.xcassets */; };
 		ACFBF85A299968D100B736D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF859299968D100B736D8 /* Preview Assets.xcassets */; };
 		ACFBF86229996E2D00B736D8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF86129996E2D00B736D8 /* Color.swift */; };
@@ -34,6 +34,7 @@
 		AC267BAD299B68E900B84031 /* EventFlagImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFlagImageView.swift; sourceTree = "<group>"; };
 		AC267BAF299B6BC800B84031 /* FlagImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImageService.swift; sourceTree = "<group>"; };
 		AC267BB1299B6E9900B84031 /* EventFlagImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFlagImageViewModel.swift; sourceTree = "<group>"; };
+		AC377ED129A656A1001DD6CD /* EventMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapAnnotationView.swift; sourceTree = "<group>"; };
 		AC3C39BC29A3C54A001B4BE1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AC48866D299CBE0A00CF5E66 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		AC48866F299CED6300CF5E66 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		ACFBF84F299968D000B736D8 /* Calendar2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFBF852299968D000B736D8 /* Calendar2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar2023App.swift; sourceTree = "<group>"; };
-		ACFBF854299968D000B736D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACFBF856299968D100B736D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACFBF859299968D100B736D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACFBF86129996E2D00B736D8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -73,30 +73,6 @@
 				AC267BB1299B6E9900B84031 /* EventFlagImageViewModel.swift */,
 			);
 			path = EventFlagImage;
-			sourceTree = "<group>";
-		};
-		AC3C39B929A3C4DE001B4BE1 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				AC3C39BA29A3C51D001B4BE1 /* ViewModels */,
-				AC3C39BB29A3C529001B4BE1 /* View */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
-		AC3C39BA29A3C51D001B4BE1 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		AC3C39BB29A3C529001B4BE1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AC3C39BC29A3C54A001B4BE1 /* DetailView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		AC5BBF76299A7A3F00EB3533 /* Services */ = {
@@ -142,7 +118,6 @@
 				ACFBF863299970F500B736D8 /* Core */,
 				ACFBF86029996E1300B736D8 /* Extensions */,
 				ACFBF852299968D000B736D8 /* Calendar2023App.swift */,
-				ACFBF854299968D000B736D8 /* ContentView.swift */,
 				ACFBF856299968D100B736D8 /* Assets.xcassets */,
 				ACFBF858299968D100B736D8 /* Preview Content */,
 			);
@@ -170,7 +145,6 @@
 		ACFBF863299970F500B736D8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AC3C39B929A3C4DE001B4BE1 /* Detail */,
 				ACFBF8692999744C00B736D8 /* Components */,
 				ACFBF8642999712200B736D8 /* Home */,
 			);
@@ -191,6 +165,7 @@
 			children = (
 				ACFBF8672999715D00B736D8 /* HomeView.swift */,
 				ACFBF872299A450200B736D8 /* ScheduleRowView.swift */,
+				AC3C39BC29A3C54A001B4BE1 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +184,7 @@
 				AC267BAC299B68A400B84031 /* EventFlagImage */,
 				ACFBF86A2999747C00B736D8 /* CircleButton */,
 				AC48866F299CED6300CF5E66 /* SearchBarView.swift */,
+				AC377ED129A656A1001DD6CD /* EventMapAnnotationView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -306,7 +282,6 @@
 				AC267BB2299B6E9900B84031 /* EventFlagImageViewModel.swift in Sources */,
 				ACFBF86C2999749800B736D8 /* CircleButtonView.swift in Sources */,
 				AC5BBF78299A7ADD00EB3533 /* ScheduleDataService.swift in Sources */,
-				ACFBF855299968D000B736D8 /* ContentView.swift in Sources */,
 				AC5BBF75299A581200EB3533 /* HomeViewModel.swift in Sources */,
 				AC48866E299CBE0A00CF5E66 /* LocalFileManager.swift in Sources */,
 				ACFBF8682999715D00B736D8 /* HomeView.swift in Sources */,
@@ -319,6 +294,7 @@
 				AC3C39BD29A3C54A001B4BE1 /* DetailView.swift in Sources */,
 				AC488670299CED6300CF5E66 /* SearchBarView.swift in Sources */,
 				ACFBF86E299A3A4E00B736D8 /* CircleButtonAnimationView.swift in Sources */,
+				AC377ED229A656A1001DD6CD /* EventMapAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
