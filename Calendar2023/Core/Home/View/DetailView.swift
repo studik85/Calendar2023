@@ -23,6 +23,7 @@ struct DetailLoadingView: View {
 struct DetailView: View {
     
     @EnvironmentObject private var vm: HomeViewModel
+    @EnvironmentObject private var nm: NotificationManager
     
     let mapSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     let event: Race
@@ -33,7 +34,7 @@ struct DetailView: View {
     
     var body: some View {
         ZStack{
-                mapLayer2
+            mapLayer2
                 .ignoresSafeArea()
             
             VStack {
@@ -42,35 +43,49 @@ struct DetailView: View {
                     VStack(alignment: .leading, spacing: 18){
                         imageSection
                         titleSection
+                        if let url = URL(string: event.circuit.url) {
+                            Link("More Info", destination: url)
+                                .font(.caption)
+                                .tint(.blue)
+                        }
                     }
                     .padding(8)
                     scheduleSection
                 }
                 .padding(5)
                 .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.ultraThinMaterial)
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(.ultraThinMaterial)
                 )
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.3), radius:20)
-            .padding(6)
+                .padding(5)
             }
+            .padding(.horizontal, 10)
             .padding(.bottom, 25)
         }
+        //        .onDisappear{
+        //            nm.reloadLocalNotifications()
+        //        }
+        
+        
+        
     }
+    
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(event: dev.event)
             .environmentObject(HomeViewModel())
+            .environmentObject(NotificationManager())
     }
 }
 
 
 extension DetailView {
-  private  var mapLayer: some View {
-      Map(coordinateRegion: .constant(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: Double(event.circuit.location.lat) ?? 0.0, longitude: Double(event.circuit.location.long) ?? 0.0), span: mapSpan)))
+    private  var mapLayer: some View {
+        Map(coordinateRegion: .constant(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: Double(event.circuit.location.lat) ?? 0.0, longitude: Double(event.circuit.location.long) ?? 0.0), span: mapSpan)))
     }
     
     private  var mapLayer2: some View {
@@ -88,8 +103,8 @@ extension DetailView {
                                 }
             
         }
-      }
-
+    }
+    
     private var imageSection: some View {
         ZStack{
             Image(event.circuit.location.locality)
@@ -122,7 +137,7 @@ extension DetailView {
     }
     
     private var scheduleSection: some View {
-        VStack(alignment: .leading, spacing: 1){
+        VStack(alignment: .leading, spacing: 3){
             raceSection
             Divider()
             firstPracticeSection
@@ -133,7 +148,7 @@ extension DetailView {
                 thirdPracticeSection
                 Divider()
                 qualificationSection
-             
+                
             } else {
                 qualificationSection
                 Divider()
@@ -147,7 +162,7 @@ extension DetailView {
     private var raceSection: some View {
         
         HStack {
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text("Race")
                     .font(.subheadline)
                     .fontWeight(.bold)
@@ -156,25 +171,35 @@ extension DetailView {
                     .font(.caption)
                     .fontWeight(.bold)
                     .foregroundColor(Color.theme.accent)
-//                    .background(Color.gray)
-                    
             }
             Spacer()
             Button {
-                
-            } label: {
-                Image(systemName: "bell.circle.fill")
-                    .font(.title)
-                    .padding(5)
-//                    .background(Color.blue)
+                if nm.notifications.contains(where: {$0.content.title == event.raceName}) {
+                    return
+                } else {
+                    if let date = vm.convertUTCDateToLocalDate(date: event.date, time: event.time) {
+                        let newDate = date.addingTimeInterval(TimeInterval(-5.0 * 60))
+                        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: newDate)
+                        guard let year = dateComponents.year, let month = dateComponents.month, let day = dateComponents.day, let hour = dateComponents.hour, let minute = dateComponents.minute else {return}
+                        nm.createLocalNotification(year: year, month: month, day: day, hour: hour, minute: minute, title: event.raceName, subtitle: event.circuit.circuitName, body: "Round \(event.round). The race will start \(vm.convertUTCDateToLocalDateString(date: event.date, time: event.time)).")
+                        nm.reloadLocalNotifications()
+                    }
+
+                }
             }
-            .padding(2)
+            
+        label: {
+            Image(systemName: "bell.circle" )
+                .font(.title)
+                .padding(0)
         }
-//        .background(Color.red)
+        .padding(.horizontal, 10)
+        .disabled(nm.notifications.contains(where: {$0.content.title == event.raceName}))
+        }
     }
     
     private var firstPracticeSection: some View {
-        VStack(alignment: .leading, spacing: 5){
+        VStack(alignment: .leading, spacing: 4){
             Text("1 Practice")
                 .font(.subheadline)
                 .fontWeight(.bold)
@@ -184,11 +209,11 @@ extension DetailView {
                 .fontWeight(.bold)
                 .foregroundColor(Color.theme.accent)
         }
-//        .background(Color.green)
+        
     }
     
     private var secondPracticeSection: some View {
-        VStack(alignment: .leading, spacing: 5) {
+        VStack(alignment: .leading, spacing: 4) {
             Text("2 Practice")
                 .font(.subheadline)
                 .fontWeight(.bold)
@@ -201,8 +226,8 @@ extension DetailView {
     }
     
     private var thirdPracticeSection: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            Text("2 Practice")
+        VStack(alignment: .leading, spacing: 4) {
+            Text("3 Practice")
                 .font(.subheadline)
                 .fontWeight(.bold)
                 .foregroundColor(Color.theme.accent)
@@ -214,7 +239,7 @@ extension DetailView {
     }
     
     private var qualificationSection: some View {
-        VStack(alignment: .leading, spacing: 5) {
+        VStack(alignment: .leading, spacing: 4) {
             Text("Qualifying")
                 .font(.subheadline)
                 .fontWeight(.bold)
@@ -227,7 +252,7 @@ extension DetailView {
     }
     
     private var sprintSection: some View {
-        VStack (alignment: .leading, spacing: 5){
+        VStack (alignment: .leading, spacing: 4){
             Text("Sprint")
                 .font(.subheadline)
                 .fontWeight(.bold)

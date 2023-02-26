@@ -10,9 +10,11 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject private var vm: HomeViewModel
+    @EnvironmentObject private var nm: NotificationManager
     @State private var showPortfolio: Bool = false
     @State private var selectedEvent: Race? = nil
     @State private var showDetailView: Bool = false
+    
     
     var body: some View {
         ZStack {
@@ -22,26 +24,41 @@ struct HomeView: View {
             //Content Layer
             VStack {
                 homeHader
-                SearchBarView(searchText: $vm.searchText)
-                columnTitles
+                
+                
                 if !showPortfolio {
+                    SearchBarView(searchText: $vm.searchText)
+                    columnTitles
                     allRacingList
                     
-                    .transition(.move(edge: .leading))
+                    //                        .transition(.move(edge: .leading))
+                    
                 }
                 
                 if showPortfolio {
-                   portfolioRacingList
-                        
-                        .transition(.move(edge: .trailing))
+                    notificationList
+//                        .transition(.move(edge: .trailing))
                 }
-
+                
                 Spacer(minLength: 0)
             }
         }
+        
         .background(
-         NavigationLink(destination: DetailLoadingView(event: $selectedEvent), isActive: $showDetailView, label: {EmptyView()})
+            NavigationLink(destination: DetailLoadingView(event: $selectedEvent), isActive: $showDetailView, label: {EmptyView()})
         )
+        //        .onAppear(perform: nm.reloadAuthorizationStatus)
+        //        .onChange(of: nm.authorizationStatus) { authorizationStatus in
+        //            switch authorizationStatus {
+        //            case .notDetermined:
+        //                nm.requestAuthorization()
+        //            case .authorized:
+        //                nm.reloadLocalNotifications()
+        //            default:
+        //                break
+        //            }
+        //
+        //        }
     }
 }
 
@@ -51,24 +68,25 @@ struct HomeView_Previews: PreviewProvider {
             HomeView()
         }
         .environmentObject(dev.homeVM)
+        .environmentObject(NotificationManager())
     }
 }
 
 extension HomeView {
     private var homeHader: some View {
         HStack{
-            CircleButtonView(iconName: showPortfolio ? "plus" : "info")
+            CircleButtonView(iconName: showPortfolio ? "xmark" : "info")
                 .animation(.none, value: 0)
                 .background(CircleButtonAnimationView(animate: $showPortfolio))
             Spacer()
-            Text(showPortfolio ? "Favorite Races" : "Race Calendar ")
+            Text(showPortfolio ? "My Notification" : "2023 Race Calendar ")
                 .font(.headline)
                 .fontWeight(.heavy)
                 .foregroundColor(Color.theme.accent)
                 .animation(.none)
             Spacer()
-            CircleButtonView(iconName: "chevron.right")
-                .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
+            CircleButtonView(iconName: showPortfolio ? "flag.checkered.2.crossed" : "bell.and.waves.left.and.right")
+                .rotationEffect(Angle(degrees: showPortfolio ? 360 : 0))
                 .onTapGesture {
                     withAnimation(.spring()) {
                         showPortfolio.toggle()
@@ -76,6 +94,30 @@ extension HomeView {
                 }
         }
         .padding(.horizontal)
+    }
+    
+    private var notificationList: some View {
+        
+        List {
+            ForEach(nm.notifications, id: \.identifier) { notifcation in
+                VStack(alignment: .leading) {
+                    Text(notifcation.content.body)
+                    Text(notifcation.content.title)
+                    Text(notifcation.content.subtitle)
+                    
+                    //                    Text(notifcation.trigger!.description)
+                }
+                .font(.caption)
+                
+                
+                .listRowBackground(Color.clear)
+            }
+            .onDelete(perform: delete)
+            
+        }
+        
+        .listStyle(.plain)
+        
     }
     
     private var allRacingList: some View {
@@ -121,5 +163,10 @@ extension HomeView {
     private func segue(event: Race) {
         selectedEvent = event
         showDetailView.toggle()
+    }
+    
+    func delete(_ indexSet: IndexSet) {
+        nm.deleteLocalNotifications(identifiers: indexSet.map {nm.notifications[$0].identifier})
+        nm.reloadLocalNotifications()
     }
 }

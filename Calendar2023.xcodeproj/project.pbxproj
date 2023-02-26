@@ -11,6 +11,7 @@
 		AC267BB0299B6BC800B84031 /* FlagImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC267BAF299B6BC800B84031 /* FlagImageService.swift */; };
 		AC267BB2299B6E9900B84031 /* EventFlagImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC267BB1299B6E9900B84031 /* EventFlagImageViewModel.swift */; };
 		AC377ED229A656A1001DD6CD /* EventMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC377ED129A656A1001DD6CD /* EventMapAnnotationView.swift */; };
+		AC38587F29A931EF000C62C8 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC38587E29A931EF000C62C8 /* NotificationManager.swift */; };
 		AC3C39BD29A3C54A001B4BE1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3C39BC29A3C54A001B4BE1 /* DetailView.swift */; };
 		AC48866E299CBE0A00CF5E66 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48866D299CBE0A00CF5E66 /* LocalFileManager.swift */; };
 		AC488670299CED6300CF5E66 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48866F299CED6300CF5E66 /* SearchBarView.swift */; };
@@ -35,6 +36,7 @@
 		AC267BAF299B6BC800B84031 /* FlagImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImageService.swift; sourceTree = "<group>"; };
 		AC267BB1299B6E9900B84031 /* EventFlagImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFlagImageViewModel.swift; sourceTree = "<group>"; };
 		AC377ED129A656A1001DD6CD /* EventMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapAnnotationView.swift; sourceTree = "<group>"; };
+		AC38587E29A931EF000C62C8 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		AC3C39BC29A3C54A001B4BE1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AC48866D299CBE0A00CF5E66 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		AC48866F299CED6300CF5E66 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */,
 				AC48866D299CBE0A00CF5E66 /* LocalFileManager.swift */,
+				AC38587E29A931EF000C62C8 /* NotificationManager.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				ACFBF875299A45B000B736D8 /* PreviewProvider.swift in Sources */,
 				AC3C39BD29A3C54A001B4BE1 /* DetailView.swift in Sources */,
 				AC488670299CED6300CF5E66 /* SearchBarView.swift in Sources */,
+				AC38587F29A931EF000C62C8 /* NotificationManager.swift in Sources */,
 				ACFBF86E299A3A4E00B736D8 /* CircleButtonAnimationView.swift in Sources */,
 				AC377ED229A656A1001DD6CD /* EventMapAnnotationView.swift in Sources */,
 			);

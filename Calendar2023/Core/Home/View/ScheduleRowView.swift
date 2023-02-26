@@ -20,14 +20,14 @@ struct ScheduleRowView: View {
                 .foregroundColor(Color.theme.secondaryText)
                 .frame(minWidth: 30)
             EventFlagImageView(event: racingEvent)
-                .frame(width: 30, height: 16)
+                .frame(width: 35, height: 20)
                 .cornerRadius(4)
             Text(racingEvent.raceName)
                 .font(.caption)
                 .bold()
                 .lineLimit(0)
                 .minimumScaleFactor(0.7)
-                .padding(.leading, 45)
+                .padding(.leading, 25)
                 .foregroundColor(Color.theme.accent)
             Spacer()
             VStack(alignment: .trailing) {
@@ -36,9 +36,10 @@ struct ScheduleRowView: View {
                     .bold()
                     .lineLimit(0)
                     .foregroundColor(Color.theme.accent)
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(0.9)
             }
             .frame(width: UIScreen.main.bounds.width / 3.5)
+            
         }
         .font(.subheadline)
         .background(Color.theme.background.opacity(0.001))
