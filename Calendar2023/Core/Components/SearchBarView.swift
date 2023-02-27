@@ -32,10 +32,11 @@ struct SearchBarView: View {
             
         }
         .font(.headline)
-        .padding()
+        .padding(.vertical,8)
+        .padding(.horizontal,16)
         .background(RoundedRectangle(cornerRadius: 25)
             .fill(Color.theme.background)
-            .shadow(color: Color.theme.accent.opacity(0.15), radius: 10))
+            .shadow(color: Color.theme.accent.opacity(0.15), radius: 5))
         .padding()
     }
 }

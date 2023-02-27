@@ -23,7 +23,7 @@ struct DetailLoadingView: View {
 struct DetailView: View {
     
     @EnvironmentObject private var vm: HomeViewModel
-    @EnvironmentObject private var nm: NotificationManager
+    @EnvironmentObject var lnManager: LocalNotificationManager
     
     let mapSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     let event: Race
@@ -36,7 +36,6 @@ struct DetailView: View {
         ZStack{
             mapLayer2
                 .ignoresSafeArea()
-            
             VStack {
                 Spacer()
                 HStack {
@@ -64,21 +63,14 @@ struct DetailView: View {
             .padding(.horizontal, 10)
             .padding(.bottom, 25)
         }
-        //        .onDisappear{
-        //            nm.reloadLocalNotifications()
-        //        }
-        
-        
-        
     }
-    
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(event: dev.event)
             .environmentObject(HomeViewModel())
-            .environmentObject(NotificationManager())
+            .environmentObject(LocalNotificationManager())
     }
 }
 
@@ -174,27 +166,44 @@ extension DetailView {
             }
             Spacer()
             Button {
-                if nm.notifications.contains(where: {$0.content.title == event.raceName}) {
-                    return
-                } else {
-                    if let date = vm.convertUTCDateToLocalDate(date: event.date, time: event.time) {
+                
+                if lnManager.isGranted {
+                    Task {
+                        guard let date = vm.convertUTCDateToLocalDate(date: event.date, time: event.time) else { return}
                         let newDate = date.addingTimeInterval(TimeInterval(-5.0 * 60))
                         let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: newDate)
-                        guard let year = dateComponents.year, let month = dateComponents.month, let day = dateComponents.day, let hour = dateComponents.hour, let minute = dateComponents.minute else {return}
-                        nm.createLocalNotification(year: year, month: month, day: day, hour: hour, minute: minute, title: event.raceName, subtitle: event.circuit.circuitName, body: "Round \(event.round). The race will start \(vm.convertUTCDateToLocalDateString(date: event.date, time: event.time)).")
-                        nm.reloadLocalNotifications()
+                        
+                        
+                        let localNotification = LocalNotification(
+                            identifier: UUID().uuidString,
+                            title: event.raceName,
+                            body: event.circuit.circuitName,
+                            dateComponents: dateComponents,
+                            repeats: false)
+                        
+                        await lnManager.schedule(localNotification: localNotification)
+                        
                     }
-
+                    
+                    
+                    Task {
+                        
+                        let notification = LocalNotification(identifier: UUID().uuidString, title: event.raceName, body: "This is a Test 15 sec. Notification", timeInterval: 15, repeats: false)
+                        await lnManager.schedule(localNotification: notification)
+                    }
+                    
+                } else {
+                    lnManager.openSettings()
                 }
             }
             
         label: {
-            Image(systemName: "bell.circle" )
+            Image(systemName: lnManager.isGranted ? "bell.circle" : "bell.slash.circle")
                 .font(.title)
                 .padding(0)
         }
         .padding(.horizontal, 10)
-        .disabled(nm.notifications.contains(where: {$0.content.title == event.raceName}))
+        .disabled(lnManager.pendingRequest.contains(where: {$0.content.title == event.raceName}))
         }
     }
     

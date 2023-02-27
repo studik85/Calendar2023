@@ -11,8 +11,7 @@ import SwiftUI
 struct Calendar2023App: App {
     
     @StateObject private var vm = HomeViewModel()
-    @StateObject private var nm = NotificationManager()
-
+    @StateObject var lnManager = LocalNotificationManager()
     
     var body: some Scene {
         WindowGroup {
@@ -20,20 +19,8 @@ struct Calendar2023App: App {
                 HomeView()
                     .navigationBarHidden(true)
             }
-            .onAppear(perform: nm.reloadAuthorizationStatus)
-            .onChange(of: nm.authorizationStatus) { authorizationStatus in
-                switch authorizationStatus {
-                case .notDetermined:
-                    nm.requestAuthorization()
-                case .authorized:
-                    nm.reloadLocalNotifications()
-                default:
-                    break
-                }
-
-            }
             .environmentObject(vm)
-            .environmentObject(nm)
+            .environmentObject(lnManager)
         }
     }
 }

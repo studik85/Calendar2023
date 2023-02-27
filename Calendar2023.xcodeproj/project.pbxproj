@@ -11,7 +11,7 @@
 		AC267BB0299B6BC800B84031 /* FlagImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC267BAF299B6BC800B84031 /* FlagImageService.swift */; };
 		AC267BB2299B6E9900B84031 /* EventFlagImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC267BB1299B6E9900B84031 /* EventFlagImageViewModel.swift */; };
 		AC377ED229A656A1001DD6CD /* EventMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC377ED129A656A1001DD6CD /* EventMapAnnotationView.swift */; };
-		AC38587F29A931EF000C62C8 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC38587E29A931EF000C62C8 /* NotificationManager.swift */; };
+		AC38587F29A931EF000C62C8 /* NotificationManagerNotUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC38587E29A931EF000C62C8 /* NotificationManagerNotUse.swift */; };
 		AC3C39BD29A3C54A001B4BE1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3C39BC29A3C54A001B4BE1 /* DetailView.swift */; };
 		AC48866E299CBE0A00CF5E66 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48866D299CBE0A00CF5E66 /* LocalFileManager.swift */; };
 		AC488670299CED6300CF5E66 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48866F299CED6300CF5E66 /* SearchBarView.swift */; };
@@ -19,6 +19,8 @@
 		AC5BBF75299A581200EB3533 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF74299A581200EB3533 /* HomeViewModel.swift */; };
 		AC5BBF78299A7ADD00EB3533 /* ScheduleDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF77299A7ADD00EB3533 /* ScheduleDataService.swift */; };
 		AC5BBF7B299AA02C00EB3533 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */; };
+		AC7CC3BE29ACA3CA00AED3D1 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3BD29ACA3CA00AED3D1 /* LocalNotificationManager.swift */; };
+		AC7CC3C029ACB9B600AED3D1 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3BF29ACB9B600AED3D1 /* LocalNotification.swift */; };
 		ACFBF853299968D000B736D8 /* Calendar2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF852299968D000B736D8 /* Calendar2023App.swift */; };
 		ACFBF857299968D100B736D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF856299968D100B736D8 /* Assets.xcassets */; };
 		ACFBF85A299968D100B736D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF859299968D100B736D8 /* Preview Assets.xcassets */; };
@@ -36,7 +38,7 @@
 		AC267BAF299B6BC800B84031 /* FlagImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImageService.swift; sourceTree = "<group>"; };
 		AC267BB1299B6E9900B84031 /* EventFlagImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFlagImageViewModel.swift; sourceTree = "<group>"; };
 		AC377ED129A656A1001DD6CD /* EventMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapAnnotationView.swift; sourceTree = "<group>"; };
-		AC38587E29A931EF000C62C8 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		AC38587E29A931EF000C62C8 /* NotificationManagerNotUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerNotUse.swift; sourceTree = "<group>"; };
 		AC3C39BC29A3C54A001B4BE1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AC48866D299CBE0A00CF5E66 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		AC48866F299CED6300CF5E66 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -44,6 +46,8 @@
 		AC5BBF74299A581200EB3533 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AC5BBF77299A7ADD00EB3533 /* ScheduleDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDataService.swift; sourceTree = "<group>"; };
 		AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		AC7CC3BD29ACA3CA00AED3D1 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		AC7CC3BF29ACB9B600AED3D1 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		ACFBF84F299968D000B736D8 /* Calendar2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFBF852299968D000B736D8 /* Calendar2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar2023App.swift; sourceTree = "<group>"; };
 		ACFBF856299968D100B736D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +95,8 @@
 			children = (
 				AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */,
 				AC48866D299CBE0A00CF5E66 /* LocalFileManager.swift */,
-				AC38587E29A931EF000C62C8 /* NotificationManager.swift */,
+				AC38587E29A931EF000C62C8 /* NotificationManagerNotUse.swift */,
+				AC7CC3BD29ACA3CA00AED3D1 /* LocalNotificationManager.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				ACFBF870299A429C00B736D8 /* Schedule.swift */,
+				AC7CC3BF29ACB9B600AED3D1 /* LocalNotification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC7CC3BE29ACA3CA00AED3D1 /* LocalNotificationManager.swift in Sources */,
 				AC488672299CF99900CF5E66 /* UIApplication.swift in Sources */,
 				ACFBF873299A450200B736D8 /* ScheduleRowView.swift in Sources */,
 				AC267BB0299B6BC800B84031 /* FlagImageService.swift in Sources */,
@@ -296,8 +303,9 @@
 				ACFBF875299A45B000B736D8 /* PreviewProvider.swift in Sources */,
 				AC3C39BD29A3C54A001B4BE1 /* DetailView.swift in Sources */,
 				AC488670299CED6300CF5E66 /* SearchBarView.swift in Sources */,
-				AC38587F29A931EF000C62C8 /* NotificationManager.swift in Sources */,
+				AC38587F29A931EF000C62C8 /* NotificationManagerNotUse.swift in Sources */,
 				ACFBF86E299A3A4E00B736D8 /* CircleButtonAnimationView.swift in Sources */,
+				AC7CC3C029ACB9B600AED3D1 /* LocalNotification.swift in Sources */,
 				AC377ED229A656A1001DD6CD /* EventMapAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
