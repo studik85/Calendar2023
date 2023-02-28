@@ -13,6 +13,7 @@ struct HomeView: View {
     @EnvironmentObject var lnManager: LocalNotificationManager
     @Environment(\.scenePhase) var scenePhase
     
+    @State private var showSettingsView: Bool = false
     @State private var showPortfolio: Bool = false
     @State private var selectedEvent: Race? = nil
     @State private var showDetailView: Bool = false
@@ -34,6 +35,9 @@ struct HomeView: View {
                     notificationList
                 }
                 Spacer(minLength: 0)
+            }
+            .sheet(isPresented: $showSettingsView) {
+                SettingsView()
             }
         }
         .task {
@@ -70,7 +74,9 @@ extension HomeView {
                 .animation(.none, value: 0)
                 .onTapGesture {
                     if showPortfolio {lnManager.clearRequests()}
-                    else {}
+                    else {
+                        showSettingsView.toggle()
+                    }
                 }
                 .background(CircleButtonAnimationView(animate: $showPortfolio))
             Spacer()
@@ -99,7 +105,7 @@ extension HomeView {
                     Text(notifcation.content.body)
                     Text(notifcation.content.title)
                     //                    Text(notifcation.content.subtitle)
-                    Text(notifcation.trigger!.description)
+//                    Text(notifcation.trigger!.description)
                 }
                 .font(.caption)
                 .swipeActions {
@@ -136,7 +142,6 @@ extension HomeView {
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
             }
         }
-        
         .listStyle(.plain)
     }
     

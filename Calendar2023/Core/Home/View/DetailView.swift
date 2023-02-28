@@ -166,28 +166,22 @@ extension DetailView {
             }
             Spacer()
             Button {
-                
                 if lnManager.isGranted {
                     Task {
                         guard let date = vm.convertUTCDateToLocalDate(date: event.date, time: event.time) else { return}
                         let newDate = date.addingTimeInterval(TimeInterval(-5.0 * 60))
                         let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: newDate)
-                        
-                        
                         let localNotification = LocalNotification(
                             identifier: UUID().uuidString,
                             title: event.raceName,
                             body: event.circuit.circuitName,
                             dateComponents: dateComponents,
                             repeats: false)
-                        
                         await lnManager.schedule(localNotification: localNotification)
                         
                     }
                     
-                    
                     Task {
-                        
                         let notification = LocalNotification(identifier: UUID().uuidString, title: event.raceName, body: "This is a Test 15 sec. Notification", timeInterval: 15, repeats: false)
                         await lnManager.schedule(localNotification: notification)
                     }
@@ -196,7 +190,6 @@ extension DetailView {
                     lnManager.openSettings()
                 }
             }
-            
         label: {
             Image(systemName: lnManager.isGranted ? "bell.circle" : "bell.slash.circle")
                 .font(.title)

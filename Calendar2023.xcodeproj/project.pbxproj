@@ -21,6 +21,7 @@
 		AC5BBF7B299AA02C00EB3533 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */; };
 		AC7CC3BE29ACA3CA00AED3D1 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3BD29ACA3CA00AED3D1 /* LocalNotificationManager.swift */; };
 		AC7CC3C029ACB9B600AED3D1 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3BF29ACB9B600AED3D1 /* LocalNotification.swift */; };
+		AC7CC3C329ADEA4400AED3D1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3C229ADEA4400AED3D1 /* SettingsView.swift */; };
 		ACFBF853299968D000B736D8 /* Calendar2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFBF852299968D000B736D8 /* Calendar2023App.swift */; };
 		ACFBF857299968D100B736D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF856299968D100B736D8 /* Assets.xcassets */; };
 		ACFBF85A299968D100B736D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFBF859299968D100B736D8 /* Preview Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		AC5BBF7A299AA02C00EB3533 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		AC7CC3BD29ACA3CA00AED3D1 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		AC7CC3BF29ACB9B600AED3D1 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
+		AC7CC3C229ADEA4400AED3D1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		ACFBF84F299968D000B736D8 /* Calendar2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFBF852299968D000B736D8 /* Calendar2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar2023App.swift; sourceTree = "<group>"; };
 		ACFBF856299968D100B736D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				AC267BAD299B68E900B84031 /* EventFlagImageView.swift */,
-				AC267BB1299B6E9900B84031 /* EventFlagImageViewModel.swift */,
 			);
 			path = EventFlagImage;
 			sourceTree = "<group>";
@@ -99,6 +100,14 @@
 				AC7CC3BD29ACA3CA00AED3D1 /* LocalNotificationManager.swift */,
 			);
 			path = Utilites;
+			sourceTree = "<group>";
+		};
+		AC7CC3C129ADE9F800AED3D1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AC7CC3C229ADEA4400AED3D1 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		ACFBF846299968D000B736D8 = {
@@ -153,6 +162,7 @@
 		ACFBF863299970F500B736D8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AC7CC3C129ADE9F800AED3D1 /* Settings */,
 				ACFBF8692999744C00B736D8 /* Components */,
 				ACFBF8642999712200B736D8 /* Home */,
 			);
@@ -190,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				AC267BAC299B68A400B84031 /* EventFlagImage */,
+				AC267BB1299B6E9900B84031 /* EventFlagImageViewModel.swift */,
 				ACFBF86A2999747C00B736D8 /* CircleButton */,
 				AC48866F299CED6300CF5E66 /* SearchBarView.swift */,
 				AC377ED129A656A1001DD6CD /* EventMapAnnotationView.swift */,
@@ -286,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC7CC3BE29ACA3CA00AED3D1 /* LocalNotificationManager.swift in Sources */,
+				AC7CC3C329ADEA4400AED3D1 /* SettingsView.swift in Sources */,
 				AC488672299CF99900CF5E66 /* UIApplication.swift in Sources */,
 				ACFBF873299A450200B736D8 /* ScheduleRowView.swift in Sources */,
 				AC267BB0299B6BC800B84031 /* FlagImageService.swift in Sources */,
